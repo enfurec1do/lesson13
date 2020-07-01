@@ -6,10 +6,11 @@ services:
        - share:/build
   db:
     image: mysql:5.5
-    ports: 3306:3306
+    ports: 
+      - '3306:3306'
     network_mode: host
     volumes:
-      - db_data: /var/lib/mysql
+      - db_data:/var/lib/mysql
     environment:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
