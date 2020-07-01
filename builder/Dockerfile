@@ -5,6 +5,6 @@ RUN apt update && apt install -y \
 
 WORKDIR git
 
-RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git && cd App42PaaS-Java-MySQL-Sample && mvn clean && mvn install
+RUN git clone https://github.com/enfurec1do/App42PaaS-Java-MySQL-Sample.git && cd App42PaaS-Java-MySQL-Sample && mvn clean && mvn install
 
-RUN cp ./target/*.war /build
+RUN cp ./target/*.war /build && cp ./WebContent/Config.properties /build
