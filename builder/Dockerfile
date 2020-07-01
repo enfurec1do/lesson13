@@ -7,4 +7,4 @@ WORKDIR git
 
 RUN git clone https://github.com/enfurec1do/App42PaaS-Java-MySQL-Sample.git && cd App42PaaS-Java-MySQL-Sample && mvn clean && mvn install
 
-RUN cp ./target/*.war /build && cp ./WebContent/Config.properties /build
+RUN cp ./App42PaaS-Java-MySQL-Sample/target/*.war /build && cp ./App42PaaS-Java-MySQL-Sample/WebContent/Config.properties /build
