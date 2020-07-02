@@ -1,10 +1,10 @@
-version: '3.4'
+version: '3.8'
 services:
   builder:
-    container_name: 'builder'
-    build: ./builder
+    container_name: builder
+    build: builder
     volumes:
-       - share:/build
+       - build:/App42PaaS-Java-MySQL-Sample/target/
   db:
     container_name: 'db'
     image: mysql:5.7
@@ -22,7 +22,7 @@ services:
       MYSQL_HOST: localhost
   web:
     container_name: 'web'
-    image: tomcat:8.5-alpine
+    build: web
     links:
       - db
     depends_on:
@@ -31,7 +31,8 @@ services:
     ports:
         - '8081:8080'
     volumes:
-        -  share:/usr/local/tomcat/webapps/
+        - build:/usr/local/tomcat/webapps/:ro
+        - build:/usr/local/tomcat/ROOT/:ro
 volumes:
-  share: {}
+  build: {}
   db_data:
