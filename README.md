@@ -1,2 +1,2 @@
 # lesson13
-http://130.193.39.210:8081/
+http://<ip>:8081/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT
