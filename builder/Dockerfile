@@ -8,3 +8,5 @@ RUN git clone https://github.com/enfurec1do/App42PaaS-Java-MySQL-Sample.git && c
 WORKDIR App42PaaS-Java-MySQL-Sample
 
 RUN cp WebContent/Config.properties target/Config.properties
+
+CMD ls
